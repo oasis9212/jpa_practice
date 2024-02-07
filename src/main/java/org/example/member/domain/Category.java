@@ -13,7 +13,7 @@ public class Category {
     private String name;
 
     // 카테 고리 대중소
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "PARENT_ID")
     private Category parent;
 

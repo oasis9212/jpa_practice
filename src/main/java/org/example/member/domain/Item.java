@@ -1,9 +1,6 @@
 package org.example.member.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,6 +16,9 @@ public class Item {
     private int price;
 
     private int stockquantity;
+
+    @ManyToMany(mappedBy = "items")
+    private List<Category> categories=new ArrayList<>();
 
     public Long getItemid() {
         return itemid;

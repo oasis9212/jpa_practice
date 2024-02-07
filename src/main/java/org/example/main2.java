@@ -9,9 +9,9 @@
 //import javax.persistence.Persistence;
 //import java.util.List;
 //
-//public class Main {
+//public class main2 {
 //    public static void main(String[] args) {
-//        EntityManagerFactory emf=Persistence.createEntityManagerFactory("hello");
+//        EntityManagerFactory emf= Persistence.createEntityManagerFactory("hello");
 //
 //        EntityManager em = emf.createEntityManager();
 //
@@ -19,27 +19,25 @@
 //        tx.begin();
 //
 //        try{
-//
 //            Team team= new Team();
 //            team.setName("TeamA");
+//
 //            em.persist(team);
+//
 //            Member member= new Member();
 //            member.setName("member1");
 //            member.setTeam(team);
-//
 //            em.persist(member);
+//
+//            Team findteam= em.find(Team.class,team.getId());
+//            List<Member> members = findteam.getMembers();
 //
 //            em.flush();
 //            em.clear();
 //
-//            Member findmember= em.find(Member.class,member.getId());
-//            List<Member> members = findmember.getTeam().getMembers();
-//
-//            for(Member m: members){
-//                System.out.println(m.getName());
-//            }
-//
-//            Team findteam= findmember.getTeam();
+//            System.out.println("===================================");
+//            System.out.println("member"+findteam   );
+//            System.out.println("===================================");
 //
 //
 //            tx.commit();
