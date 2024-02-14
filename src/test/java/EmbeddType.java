@@ -36,8 +36,7 @@ public class EmbeddType {
             em.persist(m2);
 
 
-            // 같이 변경된다.  m2 만 변경할려하지만 m 도변경되는 버그가 걸림.
-            m2.getAddress().setCity("newCity");
+
 
             tx.commit();
         }catch (Exception e){
